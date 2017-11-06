@@ -19,6 +19,7 @@ namespace Xam.Plugin.Badger.Android.Implementation
 
         internal override void SetCount(int badgeCount)
 		{
+            CurrentCount = badgeCount;
 			Intent intent1 = new Intent(INTENT_SET_NOTIFICATION);
 			ComponentName localComponentName = new ComponentName(GetContextPackageName(), GetEntryActivityName());
 			intent1.PutExtra(EXTRA_COMPONENT, localComponentName.FlattenToShortString());

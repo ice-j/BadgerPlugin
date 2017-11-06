@@ -18,6 +18,7 @@ namespace Xam.Plugin.Badger.Android
                 "AdwHomeBadger",
                 "ApexHomeBadger",
                 "AsusHomeLauncher",
+                "HuaweiHomeBadger",
                 "LGHomeBadger",
                 "NewHtcHomeBadger",
                 "NovaHomeBadger",

@@ -17,6 +17,7 @@ namespace Xam.Plugin.Badger.Android.Implementation
 
         internal override void SetCount(int badgeCount)
 		{
+            CurrentCount = badgeCount;
 			Intent intent = new Intent(INTENT_ACTION);
 			intent.PutExtra(INTENT_EXTRA_BADGE_COUNT, badgeCount);
 			intent.PutExtra(INTENT_EXTRA_PACKAGENAME, GetContextPackageName());

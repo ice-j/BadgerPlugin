@@ -51,6 +51,7 @@
     <Compile Include="Implementation\ApexHomeBadger.cs" />
     <Compile Include="Implementation\AsusHomeLauncher.cs" />
     <Compile Include="Implementation\DefaultBadger.cs" />
+    <Compile Include="Implementation\HuaweiHomeBadger.cs" />
     <Compile Include="Implementation\LGHomeBadger.cs" />
     <Compile Include="Implementation\NewHtcHomeBadger.cs" />
     <Compile Include="Implementation\NovaHomeBadger.cs" />
