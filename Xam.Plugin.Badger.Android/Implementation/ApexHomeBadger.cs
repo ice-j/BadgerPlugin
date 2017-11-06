@@ -6,10 +6,10 @@ namespace Xam.Plugin.Badger.Android.Implementation
 {
     internal class ApexHomeBadger : BaseBadge
 	{
-		private static String INTENT_UPDATE_COUNTER = "com.anddoes.launcher.COUNTER_CHANGED";
-		private static String PACKAGENAME = "package";
-		private static String COUNT = "count";
-		private static String CLASS = "class";
+		static String INTENT_UPDATE_COUNTER = "com.anddoes.launcher.COUNTER_CHANGED";
+		static String PACKAGENAME = "package";
+		static String COUNT = "count";
+		static String CLASS = "class";
 
         internal ApexHomeBadger (Context context) : base(context)
 		{
@@ -19,13 +19,13 @@ namespace Xam.Plugin.Badger.Android.Implementation
 		{
             CurrentCount = badgeCount;
 			Intent intent = new Intent(INTENT_UPDATE_COUNTER);
-			intent.PutExtra(PACKAGENAME, getContextPackageName());
+			intent.PutExtra(PACKAGENAME, GetContextPackageName());
 			intent.PutExtra(COUNT, badgeCount);
-			intent.PutExtra(CLASS, getEntryActivityName());
+			intent.PutExtra(CLASS, GetEntryActivityName());
 			mContext.SendBroadcast(intent);
 		}
 
-        internal override List<String>  getSupportLaunchers()
+        internal override List<String>  GetSupportLaunchers()
         {
 			List<string> supportedLaunchers = new List<string> ();
 			supportedLaunchers.Add ("com.anddoes.launcher");

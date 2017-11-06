@@ -6,14 +6,14 @@ namespace Xam.Plugin.Badger.Android
 {
     internal abstract class BaseBadge
     {
-        private static BaseBadge mBadge;
+        static BaseBadge mBadge;
         protected static Context mContext;
         protected static int CurrentCount = 0;
 
-        private static string LOG_TAG = "BadgeImplementation";
+        static string LOG_TAG = "BadgeImplementation";
 
         internal abstract void SetCount(int badgeCount);
-        internal abstract List<string> getSupportLaunchers();
+        internal abstract List<string> GetSupportLaunchers();
 
         internal virtual int GetCount()
             => CurrentCount;
@@ -26,13 +26,13 @@ namespace Xam.Plugin.Badger.Android
             mContext = context;
         }
 
-        protected String getEntryActivityName()
+        protected String GetEntryActivityName()
         {
             ComponentName componentName = mContext.PackageManager.GetLaunchIntentForPackage(mContext.PackageName).Component;
             return componentName.ClassName;
         }
 
-        protected String getContextPackageName()
+        protected String GetContextPackageName()
         {
             return mContext.PackageName;
         }

@@ -6,9 +6,9 @@ namespace Xam.Plugin.Badger.Android.Implementation
 {
     internal class AdwHomeBadger : BaseBadge
     {
-        public static String INTENT_UPDATE_COUNTER = "org.adw.launcher.counter.SEND";
-        public static String PACKAGENAME = "PNAME";
-        public static String COUNT = "COUNT";
+        static String INTENT_UPDATE_COUNTER = "org.adw.launcher.counter.SEND";
+        static String PACKAGENAME = "PNAME";
+        static String COUNT = "COUNT";
 
         internal AdwHomeBadger(Context context) : base(context)
         {
@@ -18,12 +18,12 @@ namespace Xam.Plugin.Badger.Android.Implementation
         {
             CurrentCount = badgeCount;
             Intent intent = new Intent(INTENT_UPDATE_COUNTER);
-            intent.PutExtra(PACKAGENAME, getContextPackageName());
+            intent.PutExtra(PACKAGENAME, GetContextPackageName());
             intent.PutExtra(COUNT, badgeCount);
             mContext.SendBroadcast(intent);
         }
 
-        internal override List<String> getSupportLaunchers()
+        internal override List<String> GetSupportLaunchers()
         {
             List<string> supportedLaunchers = new List<string>();
             supportedLaunchers.Add("org.adw.launcher");

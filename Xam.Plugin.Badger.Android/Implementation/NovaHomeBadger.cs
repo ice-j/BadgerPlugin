@@ -6,9 +6,9 @@ namespace Xam.Plugin.Badger.Android.Implementation
 {
     internal class NovaHomeBadger : BaseBadge
     {
-        private static String CONTENT_URI = "content://com.teslacoilsw.notifier/unread_count";
-        private static String COUNT = "count";
-        private static String TAG = "tag";
+        static String CONTENT_URI = "content://com.teslacoilsw.notifier/unread_count";
+        static String COUNT = "count";
+        static String TAG = "tag";
 
         internal NovaHomeBadger(Context context) : base(context)
         {
@@ -20,7 +20,7 @@ namespace Xam.Plugin.Badger.Android.Implementation
             {
                 CurrentCount = badgeCount;
                 ContentValues contentValues = new ContentValues();
-                contentValues.Put(TAG, getContextPackageName() + "/" + getEntryActivityName());
+                contentValues.Put(TAG, GetContextPackageName() + "/" + GetEntryActivityName());
                 contentValues.Put(COUNT, badgeCount);
                 mContext.ContentResolver.Insert(global::Android.Net.Uri.Parse(CONTENT_URI), contentValues);
             }
@@ -30,7 +30,7 @@ namespace Xam.Plugin.Badger.Android.Implementation
             }
         }
 
-        internal override List<String> getSupportLaunchers()
+        internal override List<String> GetSupportLaunchers()
         {
             List<string> supportedLaunchers = new List<string>();
             supportedLaunchers.Add("com.teslacoilsw.launcher");

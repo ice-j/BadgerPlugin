@@ -6,9 +6,9 @@ namespace Xam.Plugin.Badger.Android.Implementation
 {
     internal class XiaomiHomeBadger : BaseBadge
     {
-        public static String INTENT_ACTION = "android.intent.action.APPLICATION_MESSAGE_UPDATE";
-        public static String EXTRA_UPDATE_APP_COMPONENT_NAME = "android.intent.extra.update_application_component_name";
-        public static String EXTRA_UPDATE_APP_MSG_TEXT = "android.intent.extra.update_application_message_text";
+        static String INTENT_ACTION = "android.intent.action.APPLICATION_MESSAGE_UPDATE";
+        static String EXTRA_UPDATE_APP_COMPONENT_NAME = "android.intent.extra.update_application_component_name";
+        static String EXTRA_UPDATE_APP_MSG_TEXT = "android.intent.extra.update_application_message_text";
 
         internal XiaomiHomeBadger(Context context) : base(context)
         {
@@ -29,13 +29,13 @@ namespace Xam.Plugin.Badger.Android.Implementation
             {
                 Intent localIntent = new Intent(
                     INTENT_ACTION);
-                localIntent.PutExtra(EXTRA_UPDATE_APP_COMPONENT_NAME, getContextPackageName() + "/" + getEntryActivityName());
+                localIntent.PutExtra(EXTRA_UPDATE_APP_COMPONENT_NAME, GetContextPackageName() + "/" + GetEntryActivityName());
                 localIntent.PutExtra(EXTRA_UPDATE_APP_MSG_TEXT, badgeCount == 0 ? "" : badgeCount.ToString());
                 mContext.SendBroadcast(localIntent);
             }
         }
 
-        internal override List<String> getSupportLaunchers()
+        internal override List<String> GetSupportLaunchers()
         {
             List<string> supportedLaunchers = new List<string>();
             supportedLaunchers.Add("com.miui.miuilite");
