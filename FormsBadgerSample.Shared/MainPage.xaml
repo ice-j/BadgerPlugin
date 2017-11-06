@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:FormsSample"
+             x:Class="FormsSample.Shared.MainPage">
+    <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="10">
+        <Label Text="Welcome to Xamarin Forms!" 
+           HorizontalOptions="Center" />
+        <Button Text="Increment" Command="{Binding IncrementCommand}" />
+        <Button Text="Decrement" Command="{Binding DecrementCommand}" />
+        <Button Text="Reset" Command="{Binding ResetBadgeCommand}" />
+        <StackLayout Orientation="Horizontal">
+            <Entry x:Name="badgeValueEntry" Text="{Binding BadgeValue, Mode=TwoWay}" Placeholder="3" Keyboard="Numeric" WidthRequest="50" />
+            <Button Text="Set Count" Command="{Binding SetBadgeCountCommand}" CommandParameter="{Binding BadgeValue}" />
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
