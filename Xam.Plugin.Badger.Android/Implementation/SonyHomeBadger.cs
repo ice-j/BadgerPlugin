@@ -12,7 +12,8 @@ namespace Xam.Plugin.Badger.Android.Implementation
 		static String INTENT_EXTRA_MESSAGE = "com.sonyericsson.home.intent.extra.badge.MESSAGE";
 		static String INTENT_EXTRA_SHOW_MESSAGE = "com.sonyericsson.home.intent.extra.badge.SHOW_MESSAGE";
 
-        internal SonyHomeBadger (Context context) : base(context)
+        internal SonyHomeBadger() { }
+        internal SonyHomeBadger(Context context) : base(context)
 		{
 		}
 

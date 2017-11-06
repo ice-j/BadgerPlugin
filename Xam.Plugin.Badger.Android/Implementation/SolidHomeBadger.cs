@@ -11,7 +11,8 @@ namespace Xam.Plugin.Badger.Android.Implementation
 		static String COUNT = "com.majeur.launcher.intent.extra.BADGE_COUNT";
 		static String CLASS = "com.majeur.launcher.intent.extra.BADGE_CLASS";
 
-        internal SolidHomeBadger (Context context) : base(context)
+        internal SolidHomeBadger() { }
+        internal SolidHomeBadger(Context context) : base(context)
 		{
 		}
 

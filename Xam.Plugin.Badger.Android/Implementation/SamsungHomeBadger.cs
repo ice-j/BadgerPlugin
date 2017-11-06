@@ -11,6 +11,7 @@ namespace Xam.Plugin.Badger.Android.Implementation
         static String INTENT_EXTRA_PACKAGENAME = "package";
         static String INTENT_EXTRA_ACTIVITY_NAME = "class";
 
+        internal SamsungHomeBadger() { }
         internal SamsungHomeBadger(Context context) : base(context)
         {
         }

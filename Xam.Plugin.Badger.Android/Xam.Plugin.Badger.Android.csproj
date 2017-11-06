@@ -45,7 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Badge.cs" />
-    <Compile Include="BadgeService.cs" />
+    <Compile Include="BadgerService.cs" />
     <Compile Include="BaseBadge.cs" />
     <Compile Include="Implementation\AdwHomeBadger.cs" />
     <Compile Include="Implementation\ApexHomeBadger.cs" />
@@ -55,10 +55,13 @@
     <Compile Include="Implementation\LGHomeBadger.cs" />
     <Compile Include="Implementation\NewHtcHomeBadger.cs" />
     <Compile Include="Implementation\NovaHomeBadger.cs" />
+    <Compile Include="Implementation\OPPOHomeBadger.cs" />
     <Compile Include="Implementation\SamsungHomeBadger.cs" />
     <Compile Include="Implementation\SolidHomeBadger.cs" />
     <Compile Include="Implementation\SonyHomeBadger.cs" />
+    <Compile Include="Implementation\VivoHomeBadger.cs" />
     <Compile Include="Implementation\XiaomiHomeBadger.cs" />
+    <Compile Include="Implementation\ZTEHomeBadger.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

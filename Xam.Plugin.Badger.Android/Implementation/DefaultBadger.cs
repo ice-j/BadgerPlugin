@@ -12,6 +12,8 @@ namespace Xam.Plugin.Badger.Android.Implementation
         static String INTENT_EXTRA_PACKAGENAME = "badge_count_package_name";
 		static String INTENT_EXTRA_ACTIVITY_NAME = "badge_count_class_name";
 
+        internal DefaultBadger() { }
+
         internal DefaultBadger (Context context) : base(context)
 		{
 		}

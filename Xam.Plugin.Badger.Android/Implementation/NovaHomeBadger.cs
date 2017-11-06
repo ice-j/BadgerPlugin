@@ -10,6 +10,7 @@ namespace Xam.Plugin.Badger.Android.Implementation
         static String COUNT = "count";
         static String TAG = "tag";
 
+        internal NovaHomeBadger() { }
         internal NovaHomeBadger(Context context) : base(context)
         {
         }

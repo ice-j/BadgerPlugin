@@ -11,7 +11,8 @@ namespace Xam.Plugin.Badger.Android.Implementation
 		static String COUNT = "count";
 		static String CLASS = "class";
 
-        internal ApexHomeBadger (Context context) : base(context)
+        internal ApexHomeBadger() { }
+        internal ApexHomeBadger(Context context) : base(context)
 		{
 		}
 

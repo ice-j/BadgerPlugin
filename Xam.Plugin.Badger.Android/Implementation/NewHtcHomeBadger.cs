@@ -13,7 +13,8 @@ namespace Xam.Plugin.Badger.Android.Implementation
 		static String EXTRA_COMPONENT = "com.htc.launcher.extra.COMPONENT";
 		static String EXTRA_COUNT = "com.htc.launcher.extra.COUNT";
 
-        internal NewHtcHomeBadger (Context context) : base(context)
+        internal NewHtcHomeBadger() { }
+        internal NewHtcHomeBadger(Context context) : base(context)
 		{
 		}
 

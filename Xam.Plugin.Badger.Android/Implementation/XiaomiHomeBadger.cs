@@ -10,6 +10,7 @@ namespace Xam.Plugin.Badger.Android.Implementation
         static String EXTRA_UPDATE_APP_COMPONENT_NAME = "android.intent.extra.update_application_component_name";
         static String EXTRA_UPDATE_APP_MSG_TEXT = "android.intent.extra.update_application_message_text";
 
+        internal XiaomiHomeBadger() { }
         internal XiaomiHomeBadger(Context context) : base(context)
         {
         }

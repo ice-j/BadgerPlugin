@@ -21,6 +21,11 @@ namespace Xam.Plugin.Badger.Android
         internal virtual void Increment()
             => SetCount(CurrentCount + 1);
 
+        internal void SetContext(Context context)
+            => mContext = context;
+
+        internal BaseBadge() { }
+
         internal BaseBadge(Context context)
         {
             mContext = context;

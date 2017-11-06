@@ -10,6 +10,7 @@ namespace Xam.Plugin.Badger.Android.Implementation
         static String PACKAGENAME = "PNAME";
         static String COUNT = "COUNT";
 
+        internal AdwHomeBadger() { }
         internal AdwHomeBadger(Context context) : base(context)
         {
         }

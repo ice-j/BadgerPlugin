@@ -14,10 +14,13 @@ namespace Xam.Plugin.Badger.Android.Implementation
 {
     internal class HuaweiHomeBadger : BaseBadge
     {
-        static String INTENT_ACTION = "content://com.huawei.android.launcher.settings/badge/";
+        static String INTENT_URI = "content://com.huawei.android.launcher.settings/badge/";
+        static String INTENT_ACTION = "change_badge";
         static String INTENT_EXTRA_BADGE_COUNT = "badgenumber";
         static String INTENT_EXTRA_PACKAGENAME = "package";
         static String INTENT_EXTRA_ACTIVITY_NAME = "class";
+
+        internal HuaweiHomeBadger() { }
 
         internal HuaweiHomeBadger(Context context) : base(context)
         {
@@ -30,11 +33,11 @@ namespace Xam.Plugin.Badger.Android.Implementation
         internal override void SetCount(int badgeCount)
         {
             CurrentCount = badgeCount;
-            Intent intent = new Intent(INTENT_ACTION);
-            intent.PutExtra(INTENT_EXTRA_BADGE_COUNT, badgeCount);
-            intent.PutExtra(INTENT_EXTRA_PACKAGENAME, GetContextPackageName());
-            intent.PutExtra(INTENT_EXTRA_ACTIVITY_NAME, GetEntryActivityName());
-            mContext.SendBroadcast(intent);
+            Bundle bundle = new Bundle();
+            bundle.PutInt(INTENT_EXTRA_BADGE_COUNT, badgeCount);
+            bundle.PutString(INTENT_EXTRA_PACKAGENAME, GetContextPackageName());
+            bundle.PutString(INTENT_EXTRA_ACTIVITY_NAME, GetEntryActivityName());
+            mContext.ContentResolver.Call(global::Android.Net.Uri.Parse(INTENT_URI), INTENT_ACTION, null, bundle);
         }
     }
 }

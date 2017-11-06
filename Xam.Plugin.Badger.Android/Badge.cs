@@ -10,7 +10,7 @@ namespace Xam.Plugin.Badger.Android
     public class Badge
     {
         static BaseBadge mBadge;
-        static Context mContext;
+        internal static Context mContext;
         static string LOG_TAG = "BadgeImplementation";
         static List<String> BADGERS = new List<String>(
             new String[] 
@@ -81,11 +81,13 @@ namespace Xam.Plugin.Badger.Android
 
                 foreach (string badgeclass in BADGERS)
                 {
-                    Type t = Type.GetType("App2.Android." + badgeclass);
-                    BaseBadge myObject = (BaseBadge)Activator.CreateInstance(t, new Object[] { context });
+                    Type t = Type.GetType("Xam.Plugin.Badger.Android.Implementation." + badgeclass);
+                    BaseBadge myObject = (BaseBadge)Activator.CreateInstance(t, true);
                     if (myObject.GetSupportLaunchers().Contains(currentHomePackage))
                     {
+                        myObject.SetContext(context);
                         mBadge = myObject;
+                        break;
                     }
                 }
             }
