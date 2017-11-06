@@ -44,12 +44,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Badge.cs" />
+    <Compile Include="BadgeService.cs" />
+    <Compile Include="BaseBadge.cs" />
+    <Compile Include="Implementation\AdwHomeBadger.cs" />
+    <Compile Include="Implementation\ApexHomeBadger.cs" />
+    <Compile Include="Implementation\AsusHomeLauncher.cs" />
+    <Compile Include="Implementation\DefaultBadger.cs" />
+    <Compile Include="Implementation\LGHomeBadger.cs" />
+    <Compile Include="Implementation\NewHtcHomeBadger.cs" />
+    <Compile Include="Implementation\NovaHomeBadger.cs" />
+    <Compile Include="Implementation\SamsungHomeBadger.cs" />
+    <Compile Include="Implementation\SolidHomeBadger.cs" />
+    <Compile Include="Implementation\SonyHomeBadger.cs" />
+    <Compile Include="Implementation\XiaomiHomeBadger.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Xam.Plugin.Badger.Abstractions\Xam.Plugin.Badger.Abstractions.csproj">
+      <Project>{588d798c-5081-4985-b993-bec5db9e239a}</Project>
+      <Name>Xam.Plugin.Badger.Abstractions</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

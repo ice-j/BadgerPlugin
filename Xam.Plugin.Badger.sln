@@ -5,6 +5,13 @@ VisualStudioVersion = 15.0.27004.2006
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xam.Plugin.Badger.Android", "Xam.Plugin.Badger.Android\Xam.Plugin.Badger.Android.csproj", "{F87C025D-F55E-4C93-9737-1849449AB479}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xam.Plugin.Badger.Abstractions", "Xam.Plugin.Badger.Abstractions\Xam.Plugin.Badger.Abstractions.csproj", "{588D798C-5081-4985-B993-BEC5DB9E239A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NuGet", "NuGet", "{5F90172E-6DD0-49AE-A07E-25309C6CAE47}"
+	ProjectSection(SolutionItems) = preProject
+		Plugin.nuspec = Plugin.nuspec
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +22,10 @@ Global
 		{F87C025D-F55E-4C93-9737-1849449AB479}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F87C025D-F55E-4C93-9737-1849449AB479}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F87C025D-F55E-4C93-9737-1849449AB479}.Release|Any CPU.Build.0 = Release|Any CPU
+		{588D798C-5081-4985-B993-BEC5DB9E239A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{588D798C-5081-4985-B993-BEC5DB9E239A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{588D798C-5081-4985-B993-BEC5DB9E239A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{588D798C-5081-4985-B993-BEC5DB9E239A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

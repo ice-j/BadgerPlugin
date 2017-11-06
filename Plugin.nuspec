@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+   <metadata minClientVersion="2.8.1">
+       <id>Xam.Plugin.Badger</id>
+       <version>$version$</version>
+       <title>Badger Plugin for Xamarin and Windows</title>
+       <authors>Ice Jovanoski</authors>
+       <owners>Ice Jovanoski</owners>
+     <licenseUrl>https://github.com/ice-j/BadgerPlugin/blob/master/LICENSE</licenseUrl>
+     <projectUrl>https://github.com/ice-j/BadgerPlugin</projectUrl>
+       <requireLicenseAcceptance>false</requireLicenseAcceptance>
+       <description>
+         Add badge count number on Xamarin.Forms and Xamarin.Android apps.
+       </description>
+       <summary>Get/Set notifications badge count</summary>
+     <releaseNotes>
+     </releaseNotes>
+     <tags>xamarin, pcl, xam.pcl, badge, notifications, android, xamarin.forms, ios</tags>
+       <dependencies>
+       </dependencies>
+   </metadata>
+   <files>
+     <!--Core-->
+     <file src="Xam.Plugin\bin\Release\netstandard1.0\Plugin.Battery.*" target="lib\netstandard1.0" />
+
+     <!--Xamarin.Android-->
+     <file src="src\Battery.Plugin.Android\bin\Release\Plugin.Battery.*" target="lib\MonoAndroid10" />
+
+     <!--Xamarin.iOS-->
+     <!--<file src="src\Battery.Plugin.iOS\bin\iPhone\Release\Plugin.Battery.*" target="lib\Xamarin.iOS10" />-->
+
+     <!--UWP-->
+     <!--<file src="src\Battery.Plugin.UWP\bin\Release\Plugin.Battery.*" target="lib\UAP10" />-->
+
+
+   </files>
+</package>
