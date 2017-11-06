@@ -135,8 +135,12 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\FormsBadgerSample.Shared\FormsSample.Shared.csproj">
-      <Project>{529b858c-783b-4128-9d24-929d16c864bb}</Project>
+    <ProjectReference Include="..\..\Xam.Plugin.Badger.Abstractions\Xam.Plugin.Badger.Abstractions.csproj">
+      <Project>{588d798c-5081-4985-b993-bec5db9e239a}</Project>
+      <Name>Xam.Plugin.Badger.Abstractions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FormsBadgerSample.Shared\FormsSample.Shared.csproj">
+      <Project>{7f96caa3-bbd1-4807-b030-b0caaf3b4c6d}</Project>
       <Name>FormsSample.Shared</Name>
     </ProjectReference>
   </ItemGroup>
