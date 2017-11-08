@@ -2,7 +2,7 @@
 using System;
 using Xam.Plugin.Badger.Abstractions;
 
-namespace Xam.Plugin.Badger.Android
+namespace Xam.Plugin.Badger.Droid
 {
     public class BadgerService : IBadgerService
     {

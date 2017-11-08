@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Android.Content;
 
-namespace Xam.Plugin.Badger.Android
+namespace Xam.Plugin.Badger.Droid
 {
     internal abstract class BaseBadge
     {

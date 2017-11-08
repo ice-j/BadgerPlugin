@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Android.Content;
 
-namespace Xam.Plugin.Badger.Android.Implementation
+namespace Xam.Plugin.Badger.Droid.Implementation
 {
     internal class AdwHomeBadger : BaseBadge
     {

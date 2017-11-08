@@ -10,7 +10,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
-namespace Xam.Plugin.Badger.Android.Implementation
+namespace Xam.Plugin.Badger.Droid.Implementation
 {
     internal class HuaweiHomeBadger : BaseBadge
     {

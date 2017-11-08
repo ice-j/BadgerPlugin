@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using Android.Content;
+using Android.Database;
 
-namespace Xam.Plugin.Badger.Android.Implementation
+namespace Xam.Plugin.Badger.Droid.Implementation
 {
     internal class SamsungHomeBadger : BaseBadge
     {
-        static String INTENT_ACTION = "content://com.sec.badge/apps";
-        static String INTENT_EXTRA_BADGE_COUNT = "badgecount";
-        static String INTENT_EXTRA_PACKAGENAME = "package";
-        static String INTENT_EXTRA_ACTIVITY_NAME = "class";
+        static String INTENT_ACTION = "android.intent.action.BADGE_COUNT_UPDATE";
+        static String INTENT_EXTRA_BADGE_COUNT = "badge_count";
+        static String INTENT_EXTRA_PACKAGENAME = "badge_count_package_name";
+        static String INTENT_EXTRA_ACTIVITY_NAME = "badge_count_class_name";
 
         internal SamsungHomeBadger() { }
         internal SamsungHomeBadger(Context context) : base(context)
@@ -21,23 +22,11 @@ namespace Xam.Plugin.Badger.Android.Implementation
             try
             {
                 CurrentCount = badgeCount;
-                ContentResolver localContentResolver = mContext.ContentResolver;
-                global::Android.Net.Uri localUri = global::Android.Net.Uri.Parse(INTENT_ACTION);
-                ContentValues localContentValues = new ContentValues();
-                localContentValues.Put(INTENT_EXTRA_PACKAGENAME, GetContextPackageName());
-                localContentValues.Put(INTENT_EXTRA_ACTIVITY_NAME, GetEntryActivityName());
-                localContentValues.Put(INTENT_EXTRA_BADGE_COUNT, badgeCount);
-                String str = "package=? AND class=?";
-                String[] arrayOfString = new String[2];
-                arrayOfString[0] = GetContextPackageName();
-                arrayOfString[1] = GetEntryActivityName();
-
-                int update = localContentResolver.Update(localUri, localContentValues, str, arrayOfString);
-
-                if (update == 0)
-                {
-                    localContentResolver.Insert(localUri, localContentValues);
-                }
+                Intent intent = new Intent(INTENT_ACTION);
+                intent.PutExtra(INTENT_EXTRA_BADGE_COUNT, badgeCount);
+                intent.PutExtra(INTENT_EXTRA_PACKAGENAME, GetContextPackageName());
+                intent.PutExtra(INTENT_EXTRA_ACTIVITY_NAME, GetEntryActivityName());
+                mContext.SendBroadcast(intent);
             }
             catch (Exception localException)
             {

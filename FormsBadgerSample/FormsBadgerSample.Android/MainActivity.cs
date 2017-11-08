@@ -7,9 +7,10 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using Xam.Plugin.Badger.Abstractions;
-using Xam.Plugin.Badger.Android;
+using Xam.Plugin.Badger.Droid;
 using FormsSample.Shared;
 using Xamarin.Forms;
+using Plugin.Permissions;
 
 namespace FormsSample.Droid
 {
@@ -24,13 +25,19 @@ namespace FormsSample.Droid
             
             base.OnCreate(bundle);
 
-
             global::Xamarin.Forms.Forms.Init(this, bundle);
+
 
             DependencyService.Register<IBadgerService, BadgerService>();
             DependencyService.Get<IBadgerService>().SetAndroidContext(this);
 
             LoadApplication(new App());
+        }
+
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
+        {
+            base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+            PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }
 }

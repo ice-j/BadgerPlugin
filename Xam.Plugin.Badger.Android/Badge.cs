@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using Android.Content;
 using Android.Util;
 using Android.Content.PM;
-using Xam.Plugin.Badger.Android.Implementation;
+using Xam.Plugin.Badger.Droid.Implementation;
 
-namespace Xam.Plugin.Badger.Android
+namespace Xam.Plugin.Badger.Droid
 {
     public class Badge
     {
@@ -81,7 +81,7 @@ namespace Xam.Plugin.Badger.Android
 
                 foreach (string badgeclass in BADGERS)
                 {
-                    Type t = Type.GetType("Xam.Plugin.Badger.Android.Implementation." + badgeclass);
+                    Type t = Type.GetType("Xam.Plugin.Badger.Droid.Implementation." + badgeclass);
                     BaseBadge myObject = (BaseBadge)Activator.CreateInstance(t, true);
                     if (myObject.GetSupportLaunchers().Contains(currentHomePackage))
                     {
